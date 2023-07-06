@@ -15,6 +15,6 @@ and add your generated key to your public ring
 
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
-    cat ~/.ssh/id_rsa
+    cat ~/.ssh/id_rsa.pub
 
 Copy the key to your clipboard and paste it into your gitHub account. Login into your GitHub account, click on your avatar on the upper-right corner, then choose settings, then choose "SSH and GPG keys", then click on "New SSH key"... name it a title and paste in the key. 
