@@ -46,15 +46,24 @@ Let us create a Website. First take the Debian Bullseye as the base image to bui
     apt-get install -y nginx
     EOF
     cat << 'EOF' > runner.sh
-    touch /var/www/html/.lock
+    touch /var/www/.lock
+
+    cleanup() {
+      /etc/init.d/nginx stop
+      /usr/bin/rm /var/html/.lock
+    }
+
+    trap 'cleanup' SIGTERM
+    
     while true; do
       /etc/init.d/nginx start
-      if [ ! -f "/var/www/html/.lock" ]; then
+      if [ ! -f "/var/www/.lock" ]; then
         break
       fi
       sleep 10
     done
-    /etc/init.d/nginx stop
+
+    cleanup
     EOF
     podman build -t my-first-image .
 
