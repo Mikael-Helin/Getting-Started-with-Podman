@@ -46,10 +46,10 @@ Let us create a Website. First take the Debian Bullseye as the base image to bui
     apt-get install -y nginx
     EOF
     cat << 'EOF' > runner.sh
-    touch /var/www/.lock
+    touch /var/www/html/.lock
     while true; do
       /etc/init.d/nginx start
-      if [ ! -f "/var/www/.lock" ]; then
+      if [ ! -f "/var/www/html/.lock" ]; then
         break
       fi
       sleep 10
@@ -67,7 +67,7 @@ then let's create a folder for html and start a container.
 
 And if you want to stop the container, you just type
 
-    rm ~/Projects/MyFirstPod/html/html/.lock
+    rm ~/Projects/MyFirstPod/html/.lock
 
 or
 
