@@ -1,4 +1,8 @@
-# Getting Started with Github
+# Gettings Started with Podman
+
+Follow these 3 steps to go. 1) Github 2) Podman 3) VS Code
+
+## Github
 
 When you are in a "new" computer, you need to create new keys for that user. You cannot transfer keys from one computer to another, each "computer and user combination" needs its own unique keys.
 
@@ -24,7 +28,7 @@ Copy the key to your clipboard and paste it into your gitHub account.
 * then choose "SSH and GPG keys",
 * then click on "New SSH key"... name it a title and paste in the key... and submit
 
-# Getting Started with Podman
+## Podman
 
 Install synaptic and from synaptic install podman, skopeo and buildah.
 
@@ -86,10 +90,11 @@ and to start it again
 
     podman start my-first-container
 
-# VS Code
+## VS Code
 
 The last part here is to use VS Code with the project
 
     cd ~/Projects/MyFirstPod/html
     code .
 
+You are ready to go!
