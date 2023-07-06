@@ -80,10 +80,6 @@ then let's create a folder for html and start a container.
 
 And if you want to stop the container, you just type
 
-    rm ~/Projects/MyFirstPod/html/.lock
-
-or
-
     podman stop my-first-container
 
 and to start it again
